@@ -2,12 +2,14 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { LoginRequest, LoginResponse, Student, Course, Registration, Result } from '@/types';
 
+const base1Url = import.meta.env.VITE_API_URL;
+
 class ApiService {
   private api: AxiosInstance;
 
   constructor() {
     this.api = axios.create({
-      baseURL: 'http://localhost:8080/api', // Backend API URL
+      baseURL: `${base1Url}/api`, // Backend API URL
       headers: {
         'Content-Type': 'application/json',
       },
